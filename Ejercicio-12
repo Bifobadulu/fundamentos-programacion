@@ -1,0 +1,27 @@
+#Ejercicio 12
+num1 = int(input("Ingrese el primer valor: "))
+num2 = int(input("Ingrese el segundo valor: "))
+Resultado = abs(num1 - num2)
+
+if Resultado%2 == 0:
+  digito1 = int(num1/10)
+  digito2 = num1%10
+  digito3 = int(num2/10)
+  digito4 = num2%10
+  suma = digito1 + digito2 + digito3 + digito4
+  print("la diferencia de los numeros es par por lo tanto \nLa suma de los digitos es: ", suma)
+
+if Resultado  < 10 and (Resultado == 2) or (Resultado == 3) or (Resultado == 5) or (Resultado == 7):
+  print("Como dicha diferencia es un numero primo menor que 10 entonces: \n El pruducto de los dos numeros es: ", num1*num2)
+else:
+  print("El resultado de la diferencia no es un numero primo, o este valor   resultante es mayor que 10")
+
+
+if Resultado%10 == 4:
+  print("La diferencia termina en 4, por lo tanto te mostrare los digitos por separado:")
+  print("Digitos del primer numero: ")
+  for digitos in str(num1):
+    print(digitos)
+  print("Digitos del segundo numero: ")
+  for digitos in str(num2):
+    print(digitos)
