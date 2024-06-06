@@ -1,4 +1,4 @@
-#Ejercicio 12
+#Ejercicio 12 Jose Rodriguez 24-0915
 num1 = int(input("Ingrese el primer valor: "))
 num2 = int(input("Ingrese el segundo valor: "))
 Resultado = abs(num1 - num2)
