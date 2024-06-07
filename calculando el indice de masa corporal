@@ -1,0 +1,9 @@
+#Jose Rodriguez 24-0915 - Calculando el indice de masa corporal de una persona EN LB y convertir a Kg
+
+
+Peso = float(input("Ingrese su peso en lb por favor:"))
+Kg = Peso * 0.453592
+print("Su peso en kg es:", Kg )
+Estatura = float(input("Ingrese su estatura en metros por favor:"))
+Resultado = Kg / Estatura**2
+print("Su peso corporal o imc es:", Resultado)
