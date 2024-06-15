@@ -1,0 +1,50 @@
+# Jose Rodriguez-24-0915
+
+# Filtrar números pares
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+pares = [num for num in numeros if num % 2 == 0]
+print(pares)  # Salida: [2, 4, 6, 8, 10]
+
+# Filtrar cadenas que contienen 'a'
+frutas = ['manzana', 'naranja', 'plátano', 'kiwi', 'sandía']
+frutas_con_a = [fruta for fruta in frutas if 'a' in fruta]
+print(frutas_con_a)  # Salida: ['manzana', 'naranja', 'sandía']
+
+
+# Suma de elementos de una lista
+numeros = [1, 2, 3, 4, 5]
+suma = sum(numeros)
+print(suma)  # Salida: 15
+
+# Producto de elementos de una tupla
+tupla = (2, 3, 4)
+producto = 1
+for num in tupla:
+    producto *= num
+print(producto)  # Salida: 24
+
+# Media de una lista de números
+notas = [85, 92, 78, 91, 88]
+media = sum(notas) / len(notas)
+print(media)  # Salida: 86.8
+
+
+
+# Acceder a elementos de una lista
+frutas = ['manzana', 'naranja', 'plátano', 'kiwi']
+print(frutas[0])  # Salida: 'manzana'
+print(frutas[-1])  # Salida: 'kiwi'
+
+# Modificar elementos de una lista
+frutas[2] = 'pera'
+print(frutas)  # Salida: ['manzana', 'naranja', 'pera', 'kiwi']
+
+# Acceder a elementos de un diccionario
+alumno = {'nombre': 'Juan', 'edad': 18, 'promedio': 92.5}
+print(alumno['nombre'])  # Salida: 'Juan'
+print(alumno.get('promedio'))  # Salida: 92.5
+
+# Modificar elementos de un diccionario
+alumno['edad'] = 19
+alumno['promedio'] = 95.0
+print(alumno)  # Salida: {'nombre': 'Juan', 'edad': 19, 'promedio': 95.0}
