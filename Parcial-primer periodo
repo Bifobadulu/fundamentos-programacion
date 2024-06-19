@@ -1,0 +1,35 @@
+#realizar un programa que capture 4 notas de los estudiantes y determine el promedio.
+
+print(f"programa que calcula el promedio de 4 notas")
+
+Nombre = input("\nDigite su nombre: ")
+Matricula = int(input(f"\nDigite su matricula sin guion: "))
+
+letras = ["A","B","C","D","E","F","G","H","I","J","K","L",",","M","N","O","P","Q","R","S","T","U","V","W","X", "y","Z"] 
+
+Nota1 = float(input("Digite su primera nota: "))
+Nota2 = float(input("Digite su segunda nota: "))
+Nota3 = float(input("Digite su tercera nota: "))
+Nota4 = float(input("Digite su cuarta nota: "))
+promedio = (Nota1+Nota2+Nota3+Nota4)/4
+
+notas = [Nota1,Nota2,Nota3,Nota4]
+
+if notas[0]<=0 or notas[0] in letras or notas[1]<=0 or notas[1] in letras or notas[2]<=0 or notas[2] in letras or notas[3]<=0 or notas[3] in letras:
+    print("Esta nota no es valida por favor coloque valores positivos y tampoco coloque letras")
+else:
+  print(f"\nEl promedio de: {Nombre} matricula: {Matricula} es: {promedio}"	)
+  
+Incluir = input("¿Desea incluir otro estudiante?")
+if Incluir == "si":
+  
+  Nombre = input("\nDigite su nombre: ")
+  Matricula = int(input(f"\nDigite su matricula sin guion:"))
+  Nota1 = float(input("Digite su primera nota: "))
+  Nota2 = float(input("Digite su segunda nota: "))
+  Nota3 = float(input("Digite su tercera nota: "))
+  Nota4 = float(input("Digite su cuarta nota: "))
+if notas[0]<=0 or notas[0] in letras or notas[1]<=0 or notas[1] in letras or notas[2]<=0 or notas[2] in letras or notas[3]<=0 or notas[3] in letras:
+  print("Esta nota no es valida por favor coloque valores positivos y tampoco coloque letras")
+  promedio = (Nota1+Nota2+Nota3+Nota4)/4
+  print(f"\nEl promedio de: {Nombre} matricula: {Matricula} ES: {promedio}")
