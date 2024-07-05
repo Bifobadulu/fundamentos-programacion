@@ -1,0 +1,42 @@
+#Manipular cadenas de caracteres
+#Jose Anibal Rodriguez Ozuna 24-0915
+'''
+Resuelta los siguientes ejercicios con cadenas de caracteres:
+Leer un texto y realizar las siguientes operaciones:
+
+1) Retornar todo el texto en mayúsculas
+
+2) Retornar todo el texto en minúsculas
+
+3) Retornar los dos primeros caracteres del texto
+
+4) Retornar los dos últimos caracteres del texto
+
+5) Retornar la cantidad de veces que se repite el último caracter
+
+6) Retornar el texto invertido
+'''
+
+Texto = "Estoy aprendiendo el mejor lenguaje osea python"
+#1
+print(Texto.upper())
+print()
+
+#2
+print(Texto.lower())
+print()
+
+#3
+print(Texto[0:2])
+print()
+#4
+
+print(Texto[45:47])
+print()
+
+#5
+print(Texto.count("n")) 
+print()
+
+#6
+print(Texto[::-1])
