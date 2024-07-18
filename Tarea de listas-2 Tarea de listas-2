@@ -1,4 +1,4 @@
-# Leer 10 enteros, almacenarlos en una lista y determinar en qué posición del arreglo está el mayor número leído.
+#1. Leer 10 enteros, almacenarlos en una lista y determinar en qué posición del arreglo está el mayor número leído.
 
 
 numeros = []
@@ -16,3 +16,218 @@ for i in range(1, len(numeros)):
         posicion = i
 
 print(f"El mayor número es {mayor} y está en la posición {posicion}")
+
+#2.Leer 10 enteros, almacenarlos en una lista y determinar en qué posición de del arreglo está el mayor número par leído.
+
+numeros = []
+
+# Leer 10 enteros y almacenarlos en la lista
+for i in range(0,10):
+    num = int(input("Ingrese el número : "))
+    numeros.append(num)
+
+# Encontrar el mayor número y su posición
+mayor = 0
+
+
+for i in range(1, len(numeros)):
+    if numeros[i] % 2 ==0:
+        if numeros[i] > mayor:  
+            mayor = numeros[i]
+            j = i
+
+# Mostrar el resultado
+print(f"El mayor número es {mayor} se encuentra en la posicion {j+1}")
+
+#3. Leer 10 enteros, almacenarlos en una lista y determinar en qué posición del arreglo está el 
+# mayor número primo leído.
+
+
+# Inicializar una lista vacía
+numeros = []
+
+for i in range(0,10):
+    n = int(input("Ingresa un numero: "))
+    numeros.append(n)
+
+mayor = 0
+for i in range(0,10):
+    c = 0
+    j = 1
+    while j <= numeros[i]:
+        if numeros[i] % j == 0:
+            c += 1
+        j += 1
+    if c == 2:
+        if numeros[i] > mayor:
+            mayor = numeros[i]
+            y = i
+
+print(f"El numero primo mayor es {mayor} se encuentra en la posicion {y+1}")
+
+
+#4. Leer 10 números enteros, almacenarlos en una lista y determinar cuántos números de los almacenados en dicho arreglo 
+# comienzan en dígito primo
+numeros = []
+
+for i in range(10):
+    num = int(input(f"Ingrese el número {i+1}: "))
+    numeros.append(num)
+
+contador = 0
+
+for num in numeros:
+    primer_digito = int(str(abs(num))[0])
+    es_primo = primer_digito in [2, 3, 5, 7]
+    if es_primo:
+        contador += 1
+
+
+print(f"Hay {contador} números que comienzan con un dígito primo.")
+
+
+#5. Leer 10 números enteros, almacenarlos en una lista y determinar en qué posición se encuentra el número primo con mayor cantidad de dígitos pares.
+
+numeros = []
+for i in range(10):
+    num = int(input(f"Ingrese el número {i+1}: "))
+    numeros.append(num)
+
+posicion_max = -1
+max_digitos_pares = -1
+
+for i, num in enumerate(numeros):
+   
+    es_primo = num > 1
+    for j in range(2, int(num**0.5) + 1):
+        if num % j == 0:
+            es_primo = False
+            break
+    
+    if es_primo:
+        
+        digitos_pares = sum(1 for digito in str(num) if int(digito) % 2 == 0)
+        
+        
+        if digitos_pares > max_digitos_pares:
+            max_digitos_pares = digitos_pares
+            posicion_max = i
+
+if posicion_max != -1:
+    print(f"El número primo con más dígitos pares es {numeros[posicion_max]} y está en la posición {posicion_max}")
+else:
+    print("No se encontraron números primos en la lista")
+
+
+#6. Leer 10 números enteros, almacenarlos en una lista y determinar en qué posiciones se encuentran los números con más de 3 dígitos
+
+numeros = []
+
+
+for i in range(10):
+    num = int(input(f"Ingrese el número {i+1}: "))
+    numeros.append(num)
+
+
+posiciones = []
+
+
+for i, num in enumerate(numeros):
+    if len(str(abs(num))) > 3:
+        posiciones.append(i)
+
+
+if posiciones:
+    print("Las posiciones de los números con más de 3 dígitos son:", posiciones)
+else:
+    print("No se encontraron números con más de 3 dígitos")
+
+
+#7. Leer 10 números enteros, almacenarlos en una lista y determinar a cuánto es igual el promedio entero de los datos de la lista
+
+
+numeros = []
+
+
+for i in range(10):
+    num = int(input(f"Ingrese el número {i+1}: "))
+    numeros.append(num)
+
+suma = 0
+for num in numeros:
+    suma += num
+
+
+promedio_entero = suma // 10
+
+
+print(f"El promedio entero de los números es: {promedio_entero}")
+
+
+#8.   Leer 10 números enteros, almacenarlos en una lista y determinar cuántos números negativos hay.
+
+numeros = []
+
+
+for i in range(10):
+    num = int(input(f"Ingrese el número {i+1}: "))
+    numeros.append(num)
+
+
+negativos = 0
+for num in numeros:
+    if num < 0:
+        negativos += 1
+
+
+print(f"Hay {negativos} números negativos en la lista.")
+
+
+#9. Leer 10 números enteros, almacenarlos en una lista y calcular la factorial a cada uno de los números leídos almacenándolos en otra lista
+
+
+numeros = []
+factoriales = []
+
+
+for i in range(10):
+    num = int(input(f"Ingrese el número {i+1}: "))
+    numeros.append(num)
+
+
+for num in numeros:
+    if num < 0:
+        factoriales.append("No definido")
+    else:
+        factorial = 1
+        for i in range(1, num + 1):
+            factorial *= i
+        factoriales.append(factorial)
+
+
+for i in range(10):
+    print(f"El factorial de {numeros[i]} es: {factoriales[i]}")
+
+
+#10. Leer 10 números enteros, almacenarlos en una lista. Luego leer un entero y determinar cuántos divisores exactos tiene este último número entre los valores almacenados en la lista.
+
+
+numeros = []
+
+
+for i in range(10):
+    num = int(input(f"Ingrese el número {i+1}: "))
+    numeros.append(num)
+
+
+numero_buscar = int(input("Ingrese el número para buscar divisores: "))
+
+
+divisores = 0
+for num in numeros:
+    if num != 0 and numero_buscar % num == 0:
+        divisores += 1
+
+
+print(f"El número {numero_buscar} tiene {divisores} divisores exactos en la lista.")
+
