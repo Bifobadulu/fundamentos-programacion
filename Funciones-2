@@ -1,0 +1,47 @@
+#1 Funcion de saludo 
+def saludar(nombre):
+  print(f"¡Hi, {nombre}! ¿How are you?")
+nombre = "Jose"
+saludar(nombre)
+
+#2 Funcion de suma 
+def suma(a, b):
+  return a + b
+print("-"*5 + "Calculadora aritmetica" + "-"*5)
+a = int(input("\nIngrese un numero: "))
+b = int(input("\nIngrese un numero: "))
+
+result = suma(a, b)
+print(result)
+
+#3 Área de un Rectángulo
+print("*"*5 + "Área de un Rectángulo" + "*" * 5)
+def area_rectangulo(base, altura):
+  return base * altura
+base = int(input("\nIngrese la base del rectangulo: "))
+altura = int(input("\nIngrese la altura del rectangulo: "))
+area = area_rectangulo(base, altura)
+print(f"\nEl area del rectangulo es: {area}")
+print()
+
+#4 Número Par o Impar
+print("*"*5 + "Número Par o Impar" + "*" * 5)
+def num_par(numero):
+  if numero % 2 == 0:
+    return True
+  else:
+    return False
+    
+numero = int(input("\nIngrese un numero: "))
+if num_par(numero):
+  print(f"\nEl numero {numero} es par")
+else:
+  print(f"\nEl numero {numero} es impar")
+
+#5Conversión de Grados Celsius a Fahrenheit
+def conversion(celsius):
+  return (celsius * 9/5) + 32
+print("\n***Conversion de celsius a fahrenheit***")
+celsius = int(input("\nIngrese la temperatura en celsius: "))
+result = conversion(celsius)
+print(f"\nLa temperatura en fahrenheit es: {result}")
