@@ -45,3 +45,47 @@ print("\n***Conversion de celsius a fahrenheit***")
 celsius = int(input("\nIngrese la temperatura en celsius: "))
 result = conversion(celsius)
 print(f"\nLa temperatura en fahrenheit es: {result}")
+
+
+#6 Máximo de Tres Números
+def maximo_de_tres(n1, n2, n3):
+    return max(n1, n2, n3)
+
+
+n1, n2, n3 = 5, 18, 26
+print(f"El máximo de {n1}, {n2} y {n3} es: {maximo_de_tres(n1, n2, n3)}")
+
+#7 Palindromo
+def es_palindromo(texto):
+    texto = ''.join(c.lower() for c in texto if c.isalnum())
+    return texto == texto[::-1]
+
+#8 Factorial
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1) 
+numero = 4
+print(f"El factorial de {numero} es {factorial(numero)}")
+
+#9 Contar Vocales
+def contar_vocales(texto):
+  vocales = {'a', 'e', 'i', 'o', 'u'}
+  contador = 0
+  for letra in texto:
+    if letra.lower() in vocales:
+      contador += 1
+  return contador
+
+texto = "Hola, mundo!"
+print(contar_vocales(texto))  
+
+#10 Números Primos
+def es_primo(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
