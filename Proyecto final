@@ -1,0 +1,64 @@
+jugadores = {
+  "stephen curry": {"puntos": 24.6, "asistencias": 6.5, "rebotes": 4.7},
+  "lebron james": {"puntos": 27.2, "asistencias": 7.3, "rebotes": 7.5},
+  "kobe bryant": {"puntos": 25.0, "asistencias": 4.7, "rebotes": 5.2},
+  "michael jordan": {"puntos": 30.1, "asistencias": 5.3, "rebotes": 6.2},
+  "magic johnson": {"puntos": 19.5, "asistencias": 11.2, "rebotes": 7.2}
+}
+
+print(70* "*")
+print(20 * ' ' + 'Bienvenido a la App NBA(beta)')
+print(70* "*")
+print("\nLos jugadores disponibles son: ")
+print()
+Jugadores_disponibles = list(jugadores.keys())
+print(Jugadores_disponibles)
+
+
+nombres_jugadores = tuple(jugadores.keys())
+
+def mostrar_menu():
+  print("\nMenú de opciones:")
+  print("1. Ver todas las estadísticas de un jugador")
+  print("2. Ver una estadística específica de un jugador")
+  print("3. Salir")
+
+def mostrar_estadisticas_jugador(jugador):
+  jugador = jugador.lower()
+  print(f"\nEstadísticas de {jugador}:")
+  for estadistica, valor in jugadores[jugador].items():
+    print(f"{estadistica}: {valor}")
+
+def mostrar_estadistica_especifica(jugador, estadisticas):
+  jugador = jugador.lower()
+  estadisticas = estadisticas.lower()
+  if jugador in jugadores and estadisticas in jugadores[jugador]:
+    valor = jugadores[jugador][estadisticas]
+    print(f"\n{estadisticas}: {valor}")
+  else:
+    print("\nJugador o estadística no encontrados.")
+    
+while True:
+  mostrar_menu()
+  
+  opcion = input("Seleccione una opción (1-4): ")
+  if opcion == "1":
+    jugador = input("Ingrese el nombre del jugador: ")
+    
+    if jugador in jugadores:
+      mostrar_estadisticas_jugador(jugador)
+      
+    else:
+      print("El jugador no está en la lista.")
+      
+  elif opcion == "2":
+    jugador = input("Ingrese el nombre del jugador: ")
+    estadisticas = input("Ingrese la estadística (puntos/asistencias/rebotes): ")
+    mostrar_estadistica_especifica(jugador, estadisticas)    
+    
+  elif opcion == "3":
+    print("Gracias por usar la aplicación palomo. ¡Hasta pronto!")
+    break
+    
+  else:
+    print("Opción no válida. Por favor, seleccione una opción válida (1-4).")
