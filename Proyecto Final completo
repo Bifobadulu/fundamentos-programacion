@@ -1,0 +1,93 @@
+jugadores = {
+  "stephen curry": {"puntos": 24.6, "asistencias": 6.5, "rebotes": 4.7},
+  "lebron james": {"puntos": 27.2, "asistencias": 7.3, "rebotes": 7.5},
+  "kobe bryant": {"puntos": 25.0, "asistencias": 4.7, "rebotes": 5.2},
+  "michael jordan": {"puntos": 30.1, "asistencias": 5.3, "rebotes": 6.2},
+  "magic johnson": {"puntos": 19.5, "asistencias": 11.2, "rebotes": 7.2}
+}
+
+print(70* "*")
+print(20 * ' ' + 'Bienvenido a la App NBA(beta)')
+print(70* "*")
+print("\nLos jugadores disponibles son: ")
+print()
+Jugadores_disponibles = list(jugadores.keys())
+print(Jugadores_disponibles)
+
+nombres_jugadores = tuple(jugadores.keys())
+
+def mostrar_menu():
+  print("\nMenú de opciones:")
+  print("1. Ver todas las estadísticas de un jugador")
+  print("2. Ver una estadística específica de un jugador")
+  print("3. Ver el promedio de un jugador")
+  print("4. Comparar estadísticas de dos jugadores")
+  print("5. Salir")
+
+def mostrar_estadisticas_jugador(jugador):
+  jugador = jugador.lower()
+  if jugador in jugadores:
+    print(f"\nEstadísticas de {jugador}:")
+    for estadistica, valor in jugadores[jugador].items():
+      print(f"{estadistica}: {valor}")
+  else:
+    print("\nJugador no encontrado.")
+
+def mostrar_estadistica_especifica(jugador, estadistica):
+  jugador = jugador.lower()
+  estadistica = estadistica.lower()
+  if jugador in jugadores and estadistica in jugadores[jugador]:
+    valor = jugadores[jugador][estadistica]
+    print(f"\n{estadistica}: {valor}")
+  else:
+    print("\nJugador o estadística no encontrados.")
+    
+def mostrar_promedio_jugador(jugador):
+  jugador = jugador.lower()
+  if jugador in jugadores:
+    estadisticas = list(jugadores[jugador].keys())
+    promedio = sum(jugadores[jugador].values()) / len(estadisticas)
+    print(f"\nPromedio de {jugador}: {promedio:.2f}")
+  else:
+    print("\nJugador no encontrado.")
+    
+def comparar_estadisticas(jugador1, jugador2, estadistica):
+  jugador1 = jugador1.lower()
+  jugador2 = jugador2.lower()
+  estadistica = estadistica.lower()
+  if jugador1 in jugadores and jugador2 in jugadores and estadistica in jugadores[jugador1] and estadistica in jugadores[jugador2]:
+    valor1 = jugadores[jugador1][estadistica]
+    valor2 = jugadores[jugador2][estadistica]
+    if valor1 > valor2:
+      print(f"\n{jugador1} cuenta con más {estadistica} que {jugador2}")
+    elif valor1 < valor2:
+      print(f"\n{jugador2} cuenta con más {estadistica} que {jugador1}")
+    else:
+      print(f"\n{jugador1} y {jugador2} tienen la misma {estadistica}")
+  else:
+    print("\nJugador o estadística no encontrados.")
+  
+while True:
+  mostrar_menu()
+  
+  opcion = input("Seleccione una opción (1-5): ")
+  if opcion == "1":
+    jugador = input("Ingrese el nombre del jugador: ")
+    mostrar_estadisticas_jugador(jugador)
+  elif opcion == "2":
+    jugador = input("Ingrese el nombre del jugador: ")
+    estadistica = input("Ingrese la estadística (puntos/asistencias/rebotes): ")
+    mostrar_estadistica_especifica(jugador, estadistica)
+  elif opcion == "3":
+    jugador = input("Ingrese el nombre del jugador: ")
+    mostrar_promedio_jugador(jugador)
+  elif opcion == "4":
+    jugador1 = input("Ingrese el nombre del primer jugador: ")
+    jugador2 = input("Ingrese el nombre del segundo jugador: ")
+    estadistica = input("Ingrese la estadística (puntos/asistencias/rebotes): ")
+    comparar_estadisticas(jugador1, jugador2, estadistica)
+  elif opcion == "5":
+    print("Gracias por usar la aplicación. ¡Hasta pronto!")
+    break
+  else:
+    print("Opción no válida. Por favor, seleccione una opción válida (1-5).")
